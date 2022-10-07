@@ -37,3 +37,5 @@ echo_green "Install PolicyKit Rules"
 sudo -u ${BASE_USER} sh -c './moonraker/scripts/set-policykit-rules.sh --root'
 # finished
 popd
+
+export ${BASE_USER}
