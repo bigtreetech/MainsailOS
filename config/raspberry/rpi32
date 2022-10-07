@@ -9,3 +9,5 @@ DOWNLOAD_URL_IMAGE="https://downloads.raspberrypi.org/raspios_lite_armhf_latest.
 
 export DOWNLOAD_URL_CHECKSUM
 export DOWNLOAD_URL_IMAGE
+
+. config2
