@@ -33,6 +33,6 @@ jobs:
         env:
           SHELLCHECK_OPTS: -ax -s bash
         with:
-          scandir: ${{ matrix.scripts }}
+          scandir: ${{ matrix.scripts }}/**/**
           ignore_paths: ./version ./image/
           format: gcc
