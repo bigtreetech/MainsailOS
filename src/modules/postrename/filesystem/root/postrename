@@ -214,3 +214,8 @@ reboot
 ### MAIN
 main
 exit 0
+
+
+# Shellcheck test
+
+echo $BASE_USER
