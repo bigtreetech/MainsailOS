@@ -25,8 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scripts:
-          ["${{ github.workspace }}/config", "${{ github.workspace }}/src"]
+        scripts: ["config", "src"]
 
     steps:
       - name: Fetch Repository
@@ -37,7 +36,7 @@ jobs:
         env:
           SHELLCHECK_OPTS: -ax -s bash
         with:
-          scandir: ${{ matrix.scripts }}
+          scandir: ${{ github.workspace }}/${{ matrix.scripts }}
           additional_files: start_chroot_script end_chroot_script config
           ignore_paths: ./version ./image
           format: gcc
