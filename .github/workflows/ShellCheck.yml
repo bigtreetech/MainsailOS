@@ -21,9 +21,9 @@ jobs:
   shellcheck:
     name: Shellcheck
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     scripts: ["./config", "./src"]
+    strategy:
+      matrix:
+        scripts: ["${{github.workspace}}/config", "${{github.workspace}}/src"]
     steps:
       - name: Fetch Repository
         uses: actions/checkout@v3
@@ -33,6 +33,7 @@ jobs:
         env:
           SHELLCHECK_OPTS: -ax -s bash
         with:
-          # scandir: ${{ matrix.scripts }}/**/**
-          ignore_paths: ./version ./image/
+          scandir: ${{ matrix.scripts }}
+          additional_files: start_chroot_script end_chroot_script config
+          ignore_paths: ./version ./image
           format: gcc
