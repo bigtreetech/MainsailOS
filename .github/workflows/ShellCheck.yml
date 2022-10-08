@@ -25,7 +25,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        scripts: ["${{github.workspace}}/config", "${{github.workspace}}/src"]
+        scripts:
+          ["${{ github.workspace }}/config", "${{ github.workspace }}/src"]
+
     steps:
       - name: Fetch Repository
         uses: actions/checkout@v3
